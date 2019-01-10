@@ -41,5 +41,7 @@ describe ProcedureSerializer do
         ]
       )
     end
+
+    it { expect(subject[:types_de_champ]).not_to include(a_hash_including(libelle: type_pj.libelle)) }
   end
 end
