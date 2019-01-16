@@ -137,6 +137,10 @@ feature 'The user' do
     fill_in 'user_email', with: email
     fill_in 'user_password', with: password
     click_on 'Se connecter'
+
+    expect(page).to have_current_path("/commencer/#{procedure.path}")
+    click_on 'Commencer la démarche'
+
     expect(page).to have_current_path(identite_dossier_path(user_dossier))
   end
 
